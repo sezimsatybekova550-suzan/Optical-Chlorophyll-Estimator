@@ -1,86 +1,114 @@
 Optical Chlorophyll Estimator
 
-Project Description
+1. Project Description
 
-The Optical Chlorophyll Estimator is an Arduino-based project designed to explore the optical measurement of plant leaf properties using red and infrared light.
+The Optical Chlorophyll Estimator is an electronic project designed to demonstrate the principle of optical measurement of chlorophyll in plant leaves.
 
-The main goal is to develop a low-cost electronic prototype that uses light sensors to detect differences in light intensity and process the collected data using an Arduino microcontroller.
+The system uses red and infrared light sources and an optical sensor to detect changes in light intensity. The collected data is processed by an Arduino Uno and displayed on an LCD screen.
 
-Project Objectives
+2. Project Objectives
 
-* Design an optical measurement system using Arduino Uno.
-* Use red and infrared LEDs as light sources.
-* Detect light using an optical sensor.
-* Process sensor readings using Arduino.
+* Understand the principle of optical chlorophyll measurement.
+* Use electronic components to build a light-sensing system.
+* Control LEDs and read sensor values using Arduino.
+* Process sensor readings and calculate an optical ratio.
 * Display measurement results on an LCD screen.
-* Explore optical methods for monitoring plant characteristics.
 
-Components
+3. Components Used
 
-Component	Purpose
-Arduino Uno R3	Main microcontroller
-Red LED	Red light source
-Infrared LED	Infrared light source
-Phototransistor / Photodiode	Light detection
-LM358	Signal amplification
-LCD 16x2	Display
-Resistors	Current and signal control
-Breadboard	Circuit assembly
-Jumper wires	Electrical connections
+The planned physical prototype includes:
 
-Working Principle
+* Arduino Uno
+* Red LED
+* Infrared (IR) LED
+* BPW34 photodiode
+* LM358 operational amplifier
+* 16×2 LCD display
+* Resistors
+* Breadboard
+* Jumper wires
 
-The proposed system uses red and infrared LEDs as light sources.
+4. Working Principle
 
-1. Red light is directed toward a plant leaf.
-2. Infrared light is directed toward the same leaf.
-3. An optical sensor detects the received light.
-4. Arduino reads and processes the sensor signals.
-5. The measurement readings are displayed on the LCD.
+The system is based on the interaction between light and plant leaves.
 
-Accurate chlorophyll estimation requires calibration and experimental validation.
+1. The red LED illuminates the leaf.
+2. The infrared LED provides a second light source.
+3. The BPW34 photodiode detects the light received from the leaf.
+4. The sensor signal is processed by the electronic circuit.
+5. Arduino reads the sensor values and calculates an optical ratio.
+6. The results are displayed on the LCD screen.
 
-Hardware and Software
+The optical ratio can help demonstrate differences in light absorption and reflection. Additional calibration and testing are required to estimate actual chlorophyll concentration.
 
-Hardware:
+5. Circuit Diagram and Simulation
 
-* Arduino Uno R3
-* Red and infrared LEDs
-* Optical sensor
-* LCD display
-* LM358
-* Electronic components
+A Tinkercad simulation was created to test the basic light-sensing principle and Arduino operation.
 
-Software:
+Important: The current Tinkercad simulation uses an LDR photoresistor instead of the BPW34 photodiode. The LDR is used only to demonstrate changes in light intensity because the planned photodiode was not available in the simulation.
 
-* Tinkercad Circuits
-* Arduino IDE
-* C/C++ programming
+The physical prototype with the BPW34 photodiode has not yet been assembled.
 
-Individual Contribution
+6. Arduino Code
 
-This is an individual project.
+The Arduino program is available in the Code folder:
 
-All project planning, research, circuit design, programming, testing, and documentation are carried out individually.
+Code/chlorophyll_estimator.ino
 
-Project Development Status
+The program:
 
-The project is currently in the development stage.
+* Controls the red and second LED.
+* Reads sensor values.
+* Calculates an optical ratio.
+* Displays readings on the LCD.
+* Sends measurement data to the Serial Monitor.
 
-The initial concept and component selection have been established. Circuit assembly, programming, and testing are the next development steps.
+7. Testing Results
 
-Expected Results
+The Tinkercad simulation was used to check the basic operation of the system.
 
-The expected outcome is an Arduino-based optical prototype capable of activating light sources, reading optical sensor signals, processing data, and displaying readings on an LCD screen.
+The LDR sensor responded to changes in illumination:
 
-Future Improvements
+* Low illumination: approximately 54
+* High illumination: approximately 974
 
-* Improve sensor accuracy.
-* Implement calibration.
-* Develop a compact device.
-* Compare measurements from different plant leaves.
-* Improve the optical sensor arrangement.
+The LCD display and Arduino code were also tested in the simulation.
 
-Conclusion
+These values demonstrate light detection only. They are not actual chlorophyll measurements.
 
-The Optical Chlorophyll Estimator explores the combination of embedded systems and optical sensing for agricultural applications. The project applies practical electronics and programming concepts to investigate methods of monitoring plant characteristics.
+8. Individual Contribution
+
+Student: Sezim Satybekova
+Group: EEAIR-25
+Course: Electronic Components and Circuits
+
+My contribution includes:
+
+* Project planning and component selection.
+* Studying the optical measurement principle.
+* Preparing the Arduino code.
+* Creating and testing the Tinkercad simulation.
+* Preparing project documentation and analysis.
+
+9. Project Status
+
+The basic Arduino program and Tinkercad simulation have been prepared and tested.
+
+The physical prototype has not been completed because the required components, including the BPW34 photodiode, were not available in time.
+
+The simulation uses an LDR photoresistor as a temporary alternative for demonstrating the basic light-sensing principle.
+
+10. Future Improvements
+
+* Assemble the physical circuit using the BPW34 photodiode.
+* Add the LM358 signal-conditioning circuit.
+* Test the red and infrared light sources separately.
+* Calibrate the sensor using real plant leaves.
+* Improve measurement accuracy.
+* Develop a reliable relationship between optical readings and chlorophyll concentration.
+
+11. Conclusion
+
+This project demonstrates the basic principle of an optical light-sensing system using Arduino.
+
+The simulation helped test the sensor response, Arduino program, and LCD display. Although the physical prototype has not yet been completed, the project provides a foundation for developing a more accurate optical chlorophyll measurement device.
